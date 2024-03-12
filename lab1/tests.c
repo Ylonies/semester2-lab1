@@ -6,7 +6,7 @@
 #include "complex.h"
 #include "fieldInfo.h"
 
-//проверка на равенство array и массива целых чисел
+//РїСЂРѕРІРµСЂРєР° РЅР° СЂР°РІРµРЅСЃС‚РІРѕ array Рё РјР°СЃСЃРёРІР° С†РµР»С‹С… С‡РёСЃРµР»
 int EqualIntArr(Array *arr1, int *data, int len) {
     if (arr1->size != len) {
         return -1;
@@ -21,7 +21,7 @@ int EqualIntArr(Array *arr1, int *data, int len) {
     return 0;
 }
 
-//проверка на равенство array и массива комплексных чисел
+//РїСЂРѕРІРµСЂРєР° РЅР° СЂР°РІРµРЅСЃС‚РІРѕ array Рё РјР°СЃСЃРёРІР° РєРѕРјРїР»РµРєСЃРЅС‹С… С‡РёСЃРµР»
 int EqualComplexArr(Array* arr1, Complex* data, int len) {
     if (arr1->size != len) {
         return -1;
@@ -109,7 +109,7 @@ int testIntArray()
         }
     }
 
-// освобождение ресурсов
+// РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ СЂРµСЃСѓСЂСЃРѕРІ
     for (size_t i = 0; i < collection.size; i++)
     {
         arrayFree(&collection.arrs[i].arr);
@@ -191,7 +191,7 @@ int testComplexArray() {
 
 
     }
-     /*освобождение ресурсов*/
+     /*РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ СЂРµСЃСѓСЂСЃРѕРІ*/
     for (size_t i = 0; i < collection.size; i++)
     {
         arrayFree(&collection.arrs[i].arr);
