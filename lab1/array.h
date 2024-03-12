@@ -2,11 +2,15 @@
 #define ARRAY_H
 #include "fieldInfo.h"
 
+/*
+    ’эдер, представл€ющий интерфейс дл€ работы с динамическим массивом
+*/
+
 typedef struct {
-	void* data;
-	FieldInfo* typeInfo;
-	size_t size;
-}Array;
+	void* data; //ссылка на первый элемент
+	FieldInfo* typeInfo; //информаци€ о типе элементов
+	size_t size; //количество элементов
+}Array; //динамический массив
 
 typedef struct {
     char name[20]; // »м€ вектора
@@ -19,14 +23,18 @@ typedef struct {
 } ArrayCollection;
 
 
-Array* arrayInit(FieldInfo* typeInfo);
-void arrayPushBack(Array* arr, void* item);
-void arrayFree(Array* arr);
-void arrayPrint(Array* arr);
-Array* arrayMap(MapElement mapElement, Array* arr);
-Array* arrayFilter(CheckElement checkElement, Array* arr);
-void arrayReduce(ReduceElements reduceElements, Array* arr, int NumberElem, void* res);
+Array* arrayInit(FieldInfo* typeInfo); //инициализаци€ array
+void arrayPushBack(Array* arr, void* item); //добавление элемента в конец array
+void arrayFree(Array* arr); //освобождение пам€ти, занимаемой array
+void arrayPrint(Array* arr); //вывод элементов array
+Array* arrayMap(MapElement mapElement, Array* arr); //получение нового массива путем преобразовани€
+                                                   // каждого элемента arr функцией mapElements
+Array* arrayFilter(CheckElement checkElement, Array* arr); 
+//получение нового массива состо€щего из элементов arr, удовлетвор€ющих checkElements
+void arrayReduce(ReduceElements reduceElements, Array* arr, int NumberElem, void* res); 
+// обединение элементов arr функцией reduceElements
 
-Array* arrayAddToCollection(ArrayCollection* collection, char* name, FieldInfo* typeInfo);
-Array* arrayFindInCollection(ArrayCollection* collection, const char* name);
+
+Array* arrayAddToCollection(ArrayCollection* collection, char* name, FieldInfo* typeInfo); //добавление массива в коллекцию
+Array* arrayFindInCollection(ArrayCollection* collection, const char* name); //поиск ссылки на массив из коллекции по имени 
 #endif ;

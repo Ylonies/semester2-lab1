@@ -20,8 +20,7 @@ void numberPrint(const void* el) {
 
 void numberMapAbs(const void* el, void* res) {
     *(int*)res = abs(*(const int*)el);
-} //целое число ->модуль числа
-
+} 
 
 void numberMapLen(const void* el, void* res) {
     int i = 0;
@@ -31,7 +30,7 @@ void numberMapLen(const void* el, void* res) {
         i++;
     }
     *(int*)res = i;
-}//целое число->длина числа
+}
 
 
 int numberCheckPos(const void* el) {

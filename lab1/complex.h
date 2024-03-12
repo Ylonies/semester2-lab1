@@ -12,15 +12,15 @@ typedef struct {
     int imag;
 } Complex;
 
-//начинаем названия функций с имени хэдера, чтобы было понятно, какую библиотеку используем
 FieldInfo* GetComplexFieldInfo();
-void complexPrint(const void* elem);
-void complexMapOpposite(const void* elem, void* res);
-void complexMapReverse(const void* elem, void* res);
+void complexPrint(const void* elem); //вывод комплексного числа
 
-int complexCheckPosReal(const void* elem);
-int complexCheckImagNotNull(const void* elem);
+void complexMapOpposite(const void* elem, void* res); // Xr+Yi -> Xr-Yi (получение обратного комплексного числа)
+void complexMapReverse(const void* elem, void* res); // Xr + Yi -> Yr + Xi
 
-void complexSum(const void* elem1, const void* elem2, void* res);
-void complexMult(const void* elem1, const void* elem2, void* res);
+int complexCheckPosReal(const void* elem); //проверка на положительную действительную часть
+int complexCheckImagNotNull(const void* elem); // проверка на ненулевую мнимую часть
+
+void complexSum(const void* elem1, const void* elem2, void* res); // сложение компексных чисел
+void complexMult(const void* elem1, const void* elem2, void* res); //произведение комплексных чисел
 #endif

@@ -19,10 +19,10 @@ void complexPrint(const void* elem) {
     const Complex* complexElem = (const Complex*)elem;
     int imag = complexElem->imag;
     if (imag >= 0) { 
-        printf("%dr+%di, ", complexElem->real, imag);
+        printf("%dr+%di ", complexElem->real, imag);
     }
     else{
-        printf("%dr-%di, ", complexElem->real, abs(imag));
+        printf("%dr-%di ", complexElem->real, abs(imag));
     }
 }
 
