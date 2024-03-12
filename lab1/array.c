@@ -91,5 +91,5 @@ Array* arrayFindInCollection(ArrayCollection* collection, const char* name)
 			return &collection->arrs[i].arr;
 		}
 	}
-	return NULL; // Не найден
+	return NULL; 
 }
