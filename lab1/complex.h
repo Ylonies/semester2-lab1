@@ -1,26 +1,40 @@
-#ifndef CUSTOM_TYPE_H
-#define CUSTOM_TYPE_H
-#include <stdio.h>
+#ifndef ARRAY_H
+#define ARRAY_H
 #include "fieldInfo.h"
 
 /*
-    �����, �������������� ��������� ��� ������ � ������������ �������
+    Хэдер, представляющий интерфейс для работы с динамическим массивом
 */
 
 typedef struct {
-    int real;
-    int imag;
-} Complex;
+	void* data; //ссылка на первый элемент
+	FieldInfo* typeInfo; //информация о типе элементов
+	size_t size; //количество элементов
+}Array; //динамический массив
 
-FieldInfo* GetComplexFieldInfo();
-void complexPrint(const void* elem); //����� ������������ �����
+typedef struct {
+    char name[20]; // Имя вектора
+    Array arr; // Сам вектор
+} NamedArray;
 
-void complexMapOpposite(const void* elem, void* res); // Xr+Yi -> Xr-Yi (��������� ��������� ������������ �����)
-void complexMapReverse(const void* elem, void* res); // Xr + Yi -> Yr + Xi
+typedef struct {
+    NamedArray* arrs; // Динамический массив именованных векторов
+    size_t size;
+} ArrayCollection;
 
-int complexCheckPosReal(const void* elem); //�������� �� ������������� �������������� �����
-int complexCheckImagNotNull(const void* elem); // �������� �� ��������� ������ �����
 
-void complexSum(const void* elem1, const void* elem2, void* res); // �������� ���������� �����
-void complexMult(const void* elem1, const void* elem2, void* res); //������������ ����������� �����
-#endif
+Array* arrayInit(FieldInfo* typeInfo); //инициализация array
+void arrayPushBack(Array* arr, void* item); //добавление элемента в конец array
+void arrayFree(Array* arr); //освобождение памяти, занимаемой array
+void arrayPrint(Array* arr); //вывод элементов array
+Array* arrayMap(MapElement mapElement, Array* arr); //получение нового массива путем преобразования
+                                                   // каждого элемента arr функцией mapElements
+Array* arrayFilter(CheckElement checkElement, Array* arr); 
+//получение нового массива состоящего из элементов arr, удовлетворяющих checkElements
+void arrayReduce(ReduceElements reduceElements, Array* arr, int NumberElem, void* res); 
+// обединение элементов arr функцией reduceElements
+
+
+Array* arrayAddToCollection(ArrayCollection* collection, char* name, FieldInfo* typeInfo); //добавление массива в коллекцию
+Array* arrayFindInCollection(ArrayCollection* collection, const char* name); //поиск ссылки на массив из коллекции по имени 
+#endif ;

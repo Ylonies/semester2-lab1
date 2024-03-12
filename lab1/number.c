@@ -1,7 +1,7 @@
 #include <math.h>
 #include "number.h"
 
-static FieldInfo* INT_FIELD_INFO = NULL; // Скрытая глобальная переменная
+static FieldInfo* INT_FIELD_INFO = NULL; // РЎРєСЂС‹С‚Р°СЏ РіР»РѕР±Р°Р»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ
 
 FieldInfo* GetIntFieldInfo() {
     if (INT_FIELD_INFO == NULL) {
