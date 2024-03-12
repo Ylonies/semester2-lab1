@@ -5,18 +5,18 @@
 #include "fieldInfo.h"
 
 /*
-    Хэдер, представляющий интерфейс для работы с целыми числами
+    РҐСЌРґРµСЂ, РїСЂРµРґСЃС‚Р°РІР»СЏСЋС‰РёР№ РёРЅС‚РµСЂС„РµР№СЃ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ С†РµР»С‹РјРё С‡РёСЃР»Р°РјРё
 */
 
 FieldInfo* GetIntFieldInfo();
-void numberPrint(const void* el); //вывод целого числа
+void numberPrint(const void* el); //РІС‹РІРѕРґ С†РµР»РѕРіРѕ С‡РёСЃР»Р°
 
-void numberMapAbs(const void* el, void* res); //получение модуля целого числа
-void numberMapLen(const void* el, void* res); //получение количество разрядов целого числа
+void numberMapAbs(const void* el, void* res); //РїРѕР»СѓС‡РµРЅРёРµ РјРѕРґСѓР»СЏ С†РµР»РѕРіРѕ С‡РёСЃР»Р°
+void numberMapLen(const void* el, void* res); //РїРѕР»СѓС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р·СЂСЏРґРѕРІ С†РµР»РѕРіРѕ С‡РёСЃР»Р°
 
-int numberCheckPos(const void* el); // проверка на положительное целое число 
-int numberCheckEven(const void* el); //проверка на четное целое число
+int numberCheckPos(const void* el); // РїСЂРѕРІРµСЂРєР° РЅР° РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ 
+int numberCheckEven(const void* el); //РїСЂРѕРІРµСЂРєР° РЅР° С‡РµС‚РЅРѕРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ
 
-void numberSum(const void* el1, const void* el2, void* res); //сложение целых чисел
-void numberMult(const void* el1, const void* el2, void* res); //произведение целых чисел
+void numberSum(const void* el1, const void* el2, void* res); //СЃР»РѕР¶РµРЅРёРµ С†РµР»С‹С… С‡РёСЃРµР»
+void numberMult(const void* el1, const void* el2, void* res); //РїСЂРѕРёР·РІРµРґРµРЅРёРµ С†РµР»С‹С… С‡РёСЃРµР»
 #endif /*NUMBER_H*/
