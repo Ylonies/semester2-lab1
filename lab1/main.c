@@ -41,10 +41,10 @@ int main()
     FieldInfo* IntFieldInfo = GetIntFieldInfo();
     FieldInfo* ComplexFieldInfo = GetComplexFieldInfo();
 
-    // модульное тестирование перед переходом в меню
+    // РјРѕРґСѓР»СЊРЅРѕРµ С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ РїРµСЂРµРґ РїРµСЂРµС…РѕРґРѕРј РІ РјРµРЅСЋ
     if (testIntArray() == -1)
     {
-        // нет смысла выполнять основной код, так как в тестах уже ошибка
+        // РЅРµС‚ СЃРјС‹СЃР»Р° РІС‹РїРѕР»РЅСЏС‚СЊ РѕСЃРЅРѕРІРЅРѕР№ РєРѕРґ, С‚Р°Рє РєР°Рє РІ С‚РµСЃС‚Р°С… СѓР¶Рµ РѕС€РёР±РєР°
         return -1;
     }
     if (testComplexArray() == -1)
@@ -53,7 +53,7 @@ int main()
     }
     printf("All tests completed successfully!\n");
 
-    ArrayCollection collection = { NULL, 0 }; //коллекция всех массивов
+    ArrayCollection collection = { NULL, 0 }; //РєРѕР»Р»РµРєС†РёСЏ РІСЃРµС… РјР°СЃСЃРёРІРѕРІ
     while (1)
     {
         char input[20];
@@ -345,7 +345,7 @@ int main()
             }
             break;
         }
-        case 10: //Filter Сomplex Array
+        case 10: //Filter РЎomplex Array
         {
             char name[30];
             printf("Enter Complex Array name: ");
